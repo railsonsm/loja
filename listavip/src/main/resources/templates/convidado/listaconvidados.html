@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>ListaVIP</title>
-<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
 <body>
 	<div class="container">
@@ -17,11 +17,15 @@
 					</tr>
 				</thead>
 
+				
 				<tr th:each="convidado :  ${convidados}">
-					<td><span th:text="${convidado.nome}"></span></td>
+			
+					<td><a href="#" th:href="@{apagar/{id}(id=${convidado.id})}" ><span th:text="${convidado.nome}" id="${convidado.id}">	</span></a></td>
 					<td><span th:text="${convidado.email}"></span></td>
 					<td><span th:text="${convidado.telefone}"></span></td>
+					
 				</tr>
+				
 			</table>
 		</div>
 		<hr/>
